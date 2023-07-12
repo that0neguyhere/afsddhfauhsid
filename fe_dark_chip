@@ -1244,7 +1244,7 @@ local RightHip=getJoint("Right Hip")
 local LeftHip=getJoint("Left Hip")
 local Neck=getJoint("Neck")
 local AuraHandle= getAccessoryWeld("Wheel of Misfortune")
-local SwordHandle= getAccessoryWeld("ShadowBladeMasterAccessory")
+local SwordHandle= getAccessoryWeld("ShadowSword")
 addmode("default", {
 		idle = function()
 			local rY, lY = raycastlegs()
