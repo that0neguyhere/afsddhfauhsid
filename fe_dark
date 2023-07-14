@@ -319,7 +319,7 @@ local function reanimate()
 	local discharscripts = discharscripts --disables all localScripts parented to your character before reanimation
 	local removebparts = removebparts --removes the parts that you cannot control in your character by making them fall to void
 	local R15toR6 = true --adds fake r6 parts and joints for animations if your character is r15
-	local walkSpeed = 20 --your walkspeed (can be changed at runtime)
+	local walkSpeed = 30 --your walkspeed (can be changed at runtime)
 	local jumpPower = 50 --your jump power (can be changed at runtime)
 	local allowshiftlock = allowshiftlock --allows the user to use shiftlock (can be changed at runtime)
 	local gravity = 196.2 --how fast the characters velocity increases while falling (can be changed at runtime)
@@ -1263,14 +1263,14 @@ addmode("default", {
 
 			local rY, lY = raycastlegs()
 
-			Neck.C0=Neck.C0:Lerp(cf(0,1,0)*angles(-1.5707963267948966,0,3.141592653589793),deltaTime) 
-			RootJoint.C0=RootJoint.C0:Lerp(cf(0,0.1 * sin(sine*7),0)*angles(-1.5707963267948966,0,3.141592653589793+0.08726646259971647*sin((sine+50)*7)),deltaTime) 
-			RightShoulder.C0=RightShoulder.C0:Lerp(cf(1,0.5+0.1*sin((sine - 50)*7),0)*angles(0.3490658503988659*sin(sine*7),1.7453292519943295+0.17453292519943295*sin(sine*7),0),deltaTime) 
-			RightHip.C0=RightHip.C0:Lerp(cf(1,-1-0.1*sin(sine*5),0.2 * sin(sine*6))*angles(-0.17453292519943295-0.5235987755982988*sin(sine*7),1.5707963267948966,0),deltaTime) 
-			AuraHandle.C0=AuraHandle.C0:Lerp(cf(0,0,-1)*angles(0,0,174532.90774614044*sin(sine*0.00002)),deltaTime) 
-			SwordHandle.C0=SwordHandle.C0:Lerp(cf(5 * sin((sine+30)*1),5 * sin((sine+100)*1),5 * sin((sine+50)*1))*angles(0,1.5707963267948966+0.8726646259971648*sin(sine*1),8.726646259971648*sin(sine*1)),deltaTime) 
-			LeftHip.C0=LeftHip.C0:Lerp(cf(-1,-1+0.1*sin(sine*5),-0.2 * sin(sine*6))*angles(0.17453292519943295+0.5235987755982988*sin(sine*7),-1.5707963267948966,0),deltaTime) 
-			LeftShoulder.C0=LeftShoulder.C0:Lerp(cf(-1,0.5-0.1*sin((sine + 50)*7),0)*angles(-0.3490658503988659*sin(sine*7),-1.7453292519943295+0.17453292519943295*sin(sine*7),0),deltaTime) 
+			LeftHip.C0=LeftHip.C0:Lerp(cf(-1,-1+0.2*sin((sine + 30)*8),0.5 * sin(sine*8))*angles(-0.8726646259971648*sin(sine*8),-1.5707963267948966+0.3490658503988659*sin(sine*8),0),deltaTime) 
+			RightHip.C0=RightHip.C0:Lerp(cf(1,-1-0.2*sin((sine + 30)*8),-0.5 * sin(sine*8))*angles(0.8726646259971648*sin(sine*8),1.5707963267948966+0.3490658503988659*sin(sine*8),0),deltaTime) 
+			RootJoint.C0=RootJoint.C0:Lerp(cf(0,0.3 * sin(sine*10),0)*angles(-1.9198621771937625+0.17453292519943295*sin(sine*8),0,3.141592653589793),deltaTime) 
+			LeftShoulder.C0=LeftShoulder.C0:Lerp(cf(-1,0.5-0.2*sin((sine + 50)*8),0.2 * sin(sine*8))*angles(-1.0471975511965976*sin(sine*8.2),-1.5707963267948966-0.3490658503988659*sin(sine*8),0),deltaTime) 
+			Neck.C0=Neck.C0:Lerp(cf(0,1,0)*angles(-1.5707963267948966+0.2617993877991494*sin((sine-100)*8),0,3.141592653589793+0.17453292519943295*sin(sine*8)),deltaTime) 
+			RightShoulder.C0=RightShoulder.C0:Lerp(cf(1,0.5+0.2*sin((sine + 50)*8),0.2 * sin(sine*8))*angles(1.0471975511965976*sin(sine*8.2),1.5707963267948966+0.3490658503988659*sin(sine*8),0),deltaTime) 
+			AuraHandle.C0=AuraHandle.C0:Lerp(cf(0,0,2.5)*angles(0,-0.3490658503988659,174532.90774614044*sin(sine*0.00005)),deltaTime) 
+			SwordHandle.C0=SwordHandle.C0:Lerp(cf(0,10,0)*angles(174532.90774614044*sin(sine*0.00006),0.8726646259971648*sin(sine*1),1.5707963267948966+0.8726646259971648*sin(sine*1)),deltaTime) 
 		end,
 		jump = function()
 			local fw, rt = velbycfrvec()
